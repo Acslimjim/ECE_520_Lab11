@@ -1,0 +1,114 @@
+13:34:56 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\alex_\OneDrive\Documents\520_Lab\ECE_Lab11_part1\software\lperf_1\temp_xsdb_launch_script.tcl
+13:34:58 INFO  : XSCT server has started successfully.
+13:34:58 INFO  : plnx-install-location is set to ''
+13:34:58 INFO  : Successfully done setting XSCT server connection channel  
+13:34:58 INFO  : Successfully done setting workspace for the tool. 
+13:35:16 INFO  : Platform repository initialization has completed.
+13:35:16 INFO  : Registering command handlers for Vitis TCF services
+13:35:16 INFO  : Successfully done query RDI_DATADIR 
+13:37:13 INFO  : Result from executing command 'getProjects': webserver_fw_wrapper
+13:37:13 INFO  : Result from executing command 'getPlatforms': 
+13:37:13 WARN  : An unexpected exception occurred in the module 'platform project logging'
+13:37:13 INFO  : Platform 'webserver_fw_wrapper' is added to custom repositories.
+13:37:30 INFO  : Platform 'webserver_fw_wrapper' is added to custom repositories.
+13:52:13 INFO  : Result from executing command 'getProjects': webserver_fw_wrapper
+13:52:13 INFO  : Result from executing command 'getPlatforms': webserver_fw_wrapper|C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/webserver_fw_wrapper.xpfm
+13:52:14 INFO  : Checking for BSP changes to sync application flags for project 'webserver2'...
+13:52:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:52:50 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF2517A' is selected.
+13:52:52 INFO  : 'jtag frequency' command is executed.
+13:52:52 INFO  : Context for 'APU' is selected.
+13:52:52 INFO  : System reset is completed.
+13:52:55 INFO  : 'after 3000' command is executed.
+13:52:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF2517A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF2517A-13722093-0"}' command is executed.
+13:52:58 INFO  : Device configured successfully with "C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit"
+13:52:58 INFO  : Context for 'APU' is selected.
+13:53:00 INFO  : Hardware design and registers information is loaded from 'C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa'.
+13:53:00 INFO  : 'configparams force-mem-access 1' command is executed.
+13:53:00 INFO  : Context for 'APU' is selected.
+13:53:00 INFO  : Sourcing of 'C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/psinit/ps7_init.tcl' is done.
+13:53:28 INFO  : 'ps7_init' command is executed.
+13:53:29 INFO  : 'ps7_post_config' command is executed.
+13:53:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:53:35 INFO  : The application 'C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/Debug/webserver2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:53:36 INFO  : 'configparams force-mem-access 0' command is executed.
+13:53:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF2517A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF2517A-13722093-0"}
+fpga -file C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/Debug/webserver2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:53:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:53:40 INFO  : 'con' command is executed.
+13:53:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:53:40 INFO  : Disconnected from the channel tcfchan#2.
+13:54:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:54:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF2517A' is selected.
+13:54:19 INFO  : 'jtag frequency' command is executed.
+13:54:19 INFO  : Context for 'APU' is selected.
+13:54:19 INFO  : System reset is completed.
+13:54:22 INFO  : 'after 3000' command is executed.
+13:54:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF2517A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF2517A-13722093-0"}' command is executed.
+13:54:24 INFO  : Device configured successfully with "C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit"
+13:54:24 INFO  : Context for 'APU' is selected.
+13:54:24 INFO  : Hardware design and registers information is loaded from 'C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa'.
+13:54:24 INFO  : 'configparams force-mem-access 1' command is executed.
+13:54:24 INFO  : Context for 'APU' is selected.
+13:54:24 INFO  : Sourcing of 'C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/psinit/ps7_init.tcl' is done.
+13:54:40 INFO  : 'ps7_init' command is executed.
+13:54:40 INFO  : 'ps7_post_config' command is executed.
+13:54:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:54:44 INFO  : The application 'C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/Debug/webserver2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:54:46 INFO  : 'configparams force-mem-access 0' command is executed.
+13:54:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF2517A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF2517A-13722093-0"}
+fpga -file C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/software/lperf_1/webserver2/Debug/webserver2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:54:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:54:49 INFO  : 'con' command is executed.
+13:54:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:54:49 INFO  : Disconnected from the channel tcfchan#3.
+19:10:50 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\alex_\OneDrive\Documents\520_Lab\ECE_Lab11_part1\software\lperf_1\temp_xsdb_launch_script.tcl
+19:10:52 INFO  : Platform repository initialization has completed.
+19:10:54 INFO  : Registering command handlers for Vitis TCF services
+19:10:55 INFO  : XSCT server has started successfully.
+19:10:55 INFO  : plnx-install-location is set to ''
+19:11:00 INFO  : Successfully done setting XSCT server connection channel  
+19:11:00 INFO  : Successfully done query RDI_DATADIR 
+19:11:00 INFO  : Successfully done setting workspace for the tool. 

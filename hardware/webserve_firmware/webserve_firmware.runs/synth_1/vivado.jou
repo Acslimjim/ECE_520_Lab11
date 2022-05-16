@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed May 11 21:31:37 2022
+# Process ID: 31268
+# Current directory: C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/hardware/webserve_firmware/webserve_firmware.runs/synth_1
+# Command line: vivado.exe -log webserver_fw_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source webserver_fw_wrapper.tcl
+# Log file: C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/hardware/webserve_firmware/webserve_firmware.runs/synth_1/webserver_fw_wrapper.vds
+# Journal file: C:/Users/alex_/OneDrive/Documents/520_Lab/ECE_Lab11_part1/hardware/webserve_firmware/webserve_firmware.runs/synth_1\vivado.jou
+# Running On: DESKTOP-NRN5853, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 4, Host memory: 12674 MB
+#-----------------------------------------------------------
+source webserver_fw_wrapper.tcl -notrace
